@@ -1,0 +1,55 @@
+<!doctype html>
+    <head>
+
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Three JS Demo</title>
+
+        <meta name="description" content="" />
+        <meta name="keywords" content="" />
+
+        <!-- APPLICATION STYLES -->
+        <link rel='stylesheet' href='styles/styles.css' />
+
+        <!-- jQuery -->
+        <script src="lib/jquery/jquery.min.js"></script>
+
+        <!-- ThreeJS and Plugins -->
+        <script src="lib/threejs/build/three.min.js"></script>
+        <script src="lib/orbitControls/orbitControls.js"></script>
+
+        <!-- Shader Scripts -->
+
+        <!-- APPLICATION CODE -->
+        <script src="scripts/Demo.js"></script>
+
+
+        <!-- INITIALIZATION -->
+        <script>
+
+            var Demo = Demo || {};
+
+            (function(){
+
+                $(document).ready(function () {
+
+                    Demo.start();
+                });
+
+            })();
+
+        </script>
+
+    </head>
+
+
+    <!-- INITIAL MARKUP -->
+    <body>
+
+        <div class="canvas-container"></div>
+
+    </body>
+
+</html>
