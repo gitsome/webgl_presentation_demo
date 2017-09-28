@@ -12,7 +12,9 @@ var OrbitControls = OrbitControls || {};
         canvasContainer = $('.canvas-container');
 
         // setup the WebGL 3D context
-        var renderer = new THREE.WebGLRenderer();
+        var renderer = new THREE.WebGLRenderer({
+            antialias: true
+        });
         renderer.setSize(canvasContainer.width(), canvasContainer.height());
         canvasContainer.append(renderer.domElement);
 
@@ -41,10 +43,10 @@ var OrbitControls = OrbitControls || {};
         // add the vertices
         geometry.vertices.push(new THREE.Vector3(-10, 0, 0));
         geometry.vertices.push(new THREE.Vector3(10, 0, 0));
-        geometry.vertices.push(new THREE.Vector3(0, 10, 0));
+        geometry.vertices.push(new THREE.Vector3(0, Math.sqrt(300), 0));
 
         // designate the faces by vertex indices
-        geometry.faces.push(new THREE.Face3( 0, 1, 2 ));
+        geometry.faces.push(new THREE.Face3(0, 1, 2));
 
         // use ThreeJS to populate the normals array for use in the phong shader
         geometry.computeFaceNormals();
