@@ -20,7 +20,7 @@ var OrbitControls = OrbitControls || {};
 
         // setup the camera
         var camera = new THREE.PerspectiveCamera(45, canvasContainer.width() / canvasContainer.height(), 1, 500);
-        camera.position.set(0, -100, 100);
+        camera.position.set(0, 0, 30);
         camera.lookAt(new THREE.Vector3(0, 0, 0));
 
         // create the scene
@@ -30,7 +30,7 @@ var OrbitControls = OrbitControls || {};
         scene.add(new THREE.AmbientLight(0x777777));
 
         // add a point light
-        pointLight = new THREE.PointLight(0xff000, 1.0, 50);
+        pointLight = new THREE.PointLight(0xffffff, 1.0, 50);
         scene.add(pointLight);
 
         // add Orbit Controls
@@ -41,9 +41,9 @@ var OrbitControls = OrbitControls || {};
         var geometry = new THREE.Geometry();    // this is the standard low level geometry
 
         // add the vertices
-        geometry.vertices.push(new THREE.Vector3(-10, 0, 0));
-        geometry.vertices.push(new THREE.Vector3(10, 0, 0));
-        geometry.vertices.push(new THREE.Vector3(0, Math.sqrt(300), 0));
+        geometry.vertices.push(new THREE.Vector3(-10, - Math.sqrt(300) / 2, 0));
+        geometry.vertices.push(new THREE.Vector3(10, - Math.sqrt(300) / 2, 0));
+        geometry.vertices.push(new THREE.Vector3(0, Math.sqrt(300) / 2, 0));
 
         // designate the faces by vertex indices
         geometry.faces.push(new THREE.Face3(0, 1, 2));
@@ -53,7 +53,7 @@ var OrbitControls = OrbitControls || {};
 
         // create a phong material
         var material = new THREE.MeshPhongMaterial({
-            color: 0xAAAAAA,
+            color: 0xEEEEEE,
             side: THREE.DoubleSide
         });
 
